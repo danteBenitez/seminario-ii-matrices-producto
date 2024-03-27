@@ -38,8 +38,6 @@ const errorDomNode = document.querySelector("#error-message");
 const errorMessage = new ErrorMessage(errorDomNode, { timeout: null });
 
 Object.values(matrix1DimensionsInput).forEach(input => input.addEventListener("input", (e) => {
-    console.log("Input en la matriz 1");
-    console.log(e.target.name);
   if (e.target.name == "rows") {
     appState.matrix1.selectedRows = safeParseInt(e.target.value + e.key) || 0;
   } else {
@@ -51,10 +49,9 @@ Object.values(matrix1DimensionsInput).forEach(input => input.addEventListener("i
 }));
 
 Object.values(matrix2DimensionsInput).forEach(input => input.addEventListener("input", (e) => {
-    console.log("Input en la matriz 2");
-    console.log(e.target.name);
   if (e.target.name == "rows") {
-    matrix1DimensionsInput.columns.value = e.target.value + e.key;
+    matrix1DimensionsInput.columns.value = e.target.value;
+    appState.matrix1.selectedColumns = safeParseInt(e.target.value) || 0;
     appState.matrix2.selectedRows = safeParseInt(e.target.value + e.key) || 0;
   } else {
     appState.matrix2.selectedColumns = safeParseInt(e.target.value + e.key);
