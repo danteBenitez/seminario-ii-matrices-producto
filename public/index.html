@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de matrices</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="./js/product-matrix.js" type="module" defer></script>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+    <main class="">
+        <hgroup class="d-flex justify-content-center flex-column bg-black text-white p-2">
+            <h1 class="text-center fw-bold">Calculadora de matrices</h1>
+            <h2 class="text-center">Producto</h2>
+        </hgroup> 
+       <section class="fs-5 p-4">
+        <form>
+            <div class="d-flex gap-4 mx-4">
+                <fieldset class="w-100 d-flex flex-column gap-2" id="matrix-1">
+                    <h6 class="text-info-emphasis fs-2 text-center">Matriz 1</h6>
+                    <div>
+                        <label for="rows" class="form-label">Ingresa la cantidad de filas: </label>
+                        <input type="number" name="rows" class="form-control" value="10" required />
+                    </div>
+                    <div>
+                        <label for="columns" class="form-label">Ingresa la cantidad de columnas: </label>
+                        <input type="number" name="columns" class="form-control" value="10" required />
+                    </div>
+                </fieldset>
+                <fieldset class="w-100 d-flex flex-column gap-2" id="matrix-2">
+                    <h6 class="text-info-emphasis fs-2 text-center">Matriz 2</h6>
+                    <div class="">
+                        <label for="rows" class="form-label">Ingresa la cantidad de filas: </label>
+                        <input type="number" name="rows" class="form-control" value="10" required />
+                    </div>
+                    <div class="">
+                        <label for="columns" class="form-label">Ingresa la cantidad de columnas: </label>
+                        <input type="number" name="columns" class="form-control" value="10" required />
+                    </div>
+                </fieldset>
+            </div>
+            <div class="d-flex justify-content-center p-5">
+                <button class="btn btn-primary fs-4" type="button" id="generate-matrix-btn">Generar matriz</button>
+            </div>
+        </form>
+        <div id="error-message">
+        </div>
+        <article class="d-flex gap-2 p-1">
+            <div class="w-50 border border-1 p-3">
+                <h6 class="text-info-emphasis fs-2 text-center">Matriz 1</h6>
+                <div data-id="matrix" class="d-flex justify-content-center pb-5"></div>
+            </div>
+            <div class="w-50 border border-1 p-3">
+                <h6 class="text-info-emphasis fs-2 text-center">Matriz 2</h6>
+                <div data-id="matrix" class="d-flex justify-content-center pb-5"></div>
+            </div>
+        </article>
+        <div>
+            <div class="d-flex justify-content-center p-5">
+                <button class="btn btn-primary fs-4" id="send-btn">Enviar datos</button>
+            </div>
+        </div>
+        <article>
+            <div class="p-5 border border-1">
+                <h6 class="text-info-emphasis fs-2 text-center">Matriz resultado</h6>
+                <div data-id="matrix-result" class="d-flex justify-content-center"></div>
+            </div>
+        </article>
+       </section>
+    </main> 
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
